@@ -37,6 +37,9 @@ public class ApiGatewayConfiguration {
                 .route(p -> p.path("/api/auth/**")
                         .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
                         .uri("lb://DELIVERY-USERS-MICROSERVICE"))
+                .route(p -> p.path("/api/roles/**")
+                        .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
+                        .uri("lb://DELIVERY-USERS-MICROSERVICE"))
                 .build();
     }
 }
