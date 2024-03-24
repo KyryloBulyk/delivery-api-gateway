@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>kyrylo.delivery.com</groupId>
-	<artifactId>delivery</artifactId>
+	<artifactId>delivery-api-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>delivery</name>
+	<name>Delivery API Gateway</name>
 	<description>Delivery Api GateWay</description>
 	<properties>
 		<java.version>17</java.version>
