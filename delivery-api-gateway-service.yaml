@@ -3,9 +3,11 @@ kind: Service
 metadata:
   name: delivery-api-gateway
 spec:
+  type: LoadBalancer
   selector:
     app: delivery-api-gateway
   ports:
     - protocol: TCP
       port: 8765
       targetPort: 8765
+
