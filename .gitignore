@@ -5,6 +5,8 @@
 !/README.md
 !/docker-compose.yml
 !/src
+!/delivery-api-gateway-deployment.yaml
+!/delivery-api-gateway-service.yaml
 
 !/src/**
 !/src/main/**
