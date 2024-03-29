@@ -1,5 +1,7 @@
-package kyrylo.delivery.com.delivery.authorization;
+package kyrylo.delivery.com.delivery.filters;
 
+import kyrylo.delivery.com.delivery.authorization.validator.RouteValidator;
+import kyrylo.delivery.com.delivery.authorization.dto.JwtRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

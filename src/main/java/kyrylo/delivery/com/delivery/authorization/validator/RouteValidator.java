@@ -1,4 +1,4 @@
-package kyrylo.delivery.com.delivery.authorization;
+package kyrylo.delivery.com.delivery.authorization.validator;
 
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
