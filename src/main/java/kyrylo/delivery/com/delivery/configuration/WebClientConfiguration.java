@@ -1,4 +1,4 @@
-package kyrylo.delivery.com.delivery.authorization;
+package kyrylo.delivery.com.delivery.configuration;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
-public class ApiGatewayConfig {
+public class WebClientConfiguration {
 
     @Bean
     @LoadBalanced
@@ -14,4 +14,3 @@ public class ApiGatewayConfig {
         return WebClient.builder();
     }
 }
-

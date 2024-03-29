@@ -1,11 +1,13 @@
-package kyrylo.delivery.com.delivery.routing;
+package kyrylo.delivery.com.delivery.configuration;
 
-import kyrylo.delivery.com.delivery.authorization.AuthenticationFilter;
+import kyrylo.delivery.com.delivery.filters.AuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 public class ApiGatewayConfiguration {
