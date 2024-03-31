@@ -16,6 +16,8 @@ The API Gateway 🚪 plays a central role in the Delivery application's microser
 
 - [Delivery Discovery](https://github.com/KyryloBulyk/delivery-discovery) 🔍: Enables service discovery within the microservices architecture, helping the API Gateway to locate and route requests to the available instances of microservices efficiently.
 
+- [Delivery Product Microservice](https://github.com/KyryloBulyk/delivery-product-microservice) 📦: Manages product catalog and order processing, handling product information, categories, and user orders, integrating seamlessly with the rest of the Delivery application ecosystem.
+
 Through these interactions, the Delivery API Gateway enhances the application's scalability, security, and manageability.
 
 ## ✨ Key Features
