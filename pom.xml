@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>kyrylo.delivery.com</groupId>
 	<artifactId>delivery-api-gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>Delivery API Gateway</name>
 	<description>Delivery Api GateWay</description>
 	<properties>
