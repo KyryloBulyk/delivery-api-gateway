@@ -2,13 +2,15 @@ version: '3.8'
 services:
   discovery:
     image: kyrylobulyk/delivery-discovery:0.0.1
+    platform: linux/amd64
     ports:
       - "8761:8761"
     networks:
       - delivery-network
 
   users-microservice:
-    image: kyrylobulyk/delivery-users-microservice:0.0.1
+    image: kyrylobulyk/delivery-users-microservice:0.0.2
+    platform: linux/amd64
     depends_on:
       - discovery
     environment:
@@ -20,8 +22,10 @@ services:
 
   product-microservice:
     image: kyrylobulyk/delivery-product-microservice:0.0.1
+    platform: linux/amd64
     depends_on:
       - discovery
+      - users-microservice
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8761/eureka
     ports:
@@ -30,7 +34,8 @@ services:
       - delivery-network
 
   api-gateway:
-    image: kyrylobulyk/delivery-api-gateway:0.0.1
+    image: kyrylobulyk/delivery-api-gateway:0.0.2
+    platform: linux/amd64
     depends_on:
       - discovery
       - users-microservice
