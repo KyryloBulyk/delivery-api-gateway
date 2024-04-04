@@ -21,6 +21,7 @@ public class ApiGatewayConfiguration {
     @Bean
     public RouteLocator gatewayRouter(RouteLocatorBuilder builder) {
         return builder.routes()
+                // Delivery Users Microservice
                 .route(p -> p.path("/api/users/**")
                         .uri("lb://DELIVERY-USERS-MICROSERVICE"))
                 .route(p -> p.path("/api/users/{userId}")
@@ -34,8 +35,27 @@ public class ApiGatewayConfiguration {
                 .route(p -> p.path("/api/auth/**")
                         .uri("lb://DELIVERY-USERS-MICROSERVICE"))
                 .route(p -> p.path("/api/roles/**")
-//                        .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
                         .uri("lb://DELIVERY-USERS-MICROSERVICE"))
+
+                // Delivery Product Microservice
+                .route(p -> p.path("/api/categories")
+                        .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
+                        .uri("lb://DELIVERY-PRODUCT-MICROSERVICE"))
+                .route(p -> p.path("/api/categories/**")
+                        .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
+                        .uri("lb://DELIVERY-PRODUCT-MICROSERVICE"))
+                .route(p -> p.path("/api/products")
+                        .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
+                        .uri("lb://DELIVERY-PRODUCT-MICROSERVICE"))
+                .route(p -> p.path("/api/products/**")
+                        .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
+                        .uri("lb://DELIVERY-PRODUCT-MICROSERVICE"))
+                .route(p -> p.path("/api/orders")
+                        .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
+                        .uri("lb://DELIVERY-PRODUCT-MICROSERVICE"))
+                .route(p -> p.path("/api/orders/**")
+                        .filters(f -> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
+                        .uri("lb://DELIVERY-PRODUCT-MICROSERVICE"))
                 .build();
     }
 }
